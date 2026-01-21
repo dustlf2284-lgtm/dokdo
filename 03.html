@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. 문의하기</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2 font-bold text-blue-900 hover:opacity-80">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                메인으로
+            </a>
+            <h1 class="text-lg font-bold">03. 문의하기</h1>
+            <div class="w-20"></div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-lg">
+        
+        <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-slate-900 mb-2">궁금한 점이 있으신가요?</h2>
+            <p class="text-slate-600">독도에 대해 질문하거나 의견을 남겨주세요.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100">
+            <form onsubmit="handleSubmit(event)" class="space-y-6">
+                
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">이름</label>
+                    <input type="text" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 transition-colors" placeholder="홍길동">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">이메일</label>
+                    <input type="email" required class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 transition-colors" placeholder="example@email.com">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">카테고리</label>
+                    <select class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 transition-colors">
+                        <option>역사 관련 질문</option>
+                        <option>지리/환경 질문</option>
+                        <option>웹사이트 오류 신고</option>
+                        <option>기타 의견</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2">내용</label>
+                    <textarea required rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:border-blue-500 transition-colors" placeholder="문의하실 내용을 입력해주세요."></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    문의하기
+                </button>
+            </form>
+        </div>
+        
+        <div class="mt-8 text-center text-sm text-slate-500">
+            <p>보내주신 의견은 학습 자료 개선에 활용됩니다.</p>
+        </div>
+
+    </main>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            // 실제 전송 로직 대신 알림창 표시
+            alert("소중한 의견 감사합니다! \n문의 내용이 성공적으로 접수되었습니다.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
